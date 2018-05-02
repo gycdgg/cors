@@ -1,0 +1,24 @@
+{
+  "name": "crosssite",
+  "version": "1.0.0",
+  "description": "cross site demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/nodemon"
+  },
+  "author": "edmond Guan",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-plugin-syntax-async-functions": "^6.8.0",
+    "babel-plugin-transform-async-to-generator": "^6.8.0",
+    "babel-preset-es2015-node5": "^1.1.2",
+    "babel-preset-stage-0": "^6.3.13",
+    "babel-register": "^6.4.3",
+    "koa": "^2.5.1",
+    "koa-cors": "0.0.16",
+    "koa-router": "^7.4.0",
+    "koa-static": "^4.0.2",
+    "nodemon": "^1.17.3"
+  }
+}
