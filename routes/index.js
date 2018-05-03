@@ -10,7 +10,8 @@ router.get('/jsonp', async function (ctx, next) {
     console.log('1111',ctx.query)
     let callback = ctx.query.callback
     const resStr = "this is jsonP response"
-    ctx.body = `${callback}("${resStr}")`
+    ctx.type = "text/javascript"
+    ctx.body = `${callback}(${JSON.stringify(resStr)})`
 })
 
 export default router

@@ -50,6 +50,7 @@ app.js          // server端主文件
 index.js        // 项目主文件
 index.html      // 后端页面，直接调用接口没有跨域限制。相同域名相同端口
 package.json    // 依赖
+nginx.conf      // nginx配置信息
 ```
 
 ## 总结

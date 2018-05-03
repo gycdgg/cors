@@ -4,6 +4,7 @@ import routes from './routes'
 import cors from 'koa-cors'
 import Static from "koa-static"
 import path from 'path'
+
 const app = new Koa()
 const router = Router()
 //  app.use(cors())
@@ -20,7 +21,7 @@ const router = Router()
 app.use(Static(path.join(__dirname)))
 app.use(async(ctx,next)=>{
     await next()
-    console.log(`request detail ${ctx.originalUrl} method: ${ctx.method}`)
+    console.log(`request detail ${ctx.originalUrl} method: ${ctx.method} type:${ctx.type}`)
 })
 router.use('/api', routes.routes())
 app.use(router.routes())
