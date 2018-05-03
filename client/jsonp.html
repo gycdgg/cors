@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>use jsonp</title>
 </head>
 <body>
         <div style="background-color: red">use jsonp</div>
 </body>
 <script>
+    let jsonpStr;
     function getJsonp(str){
         console.log('success',str)
+        jsonpStr = str
     }
+
 </script>
 <script>
     let scriptObj = document.createElement('script')
-    scriptObj.setAttribute('src', 'http://localhost:3003/jsonp?callback=getJsonp')
+    scriptObj.setAttribute('src', 'http://localhost:3003/api/jsonp?callback=getJsonp')
     document.body.appendChild(scriptObj)
 </script>
 </html>

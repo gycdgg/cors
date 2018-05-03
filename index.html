@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>This is origin page</title>
+</head>
+<body>
+    <div style="background: rgb(119, 44, 44)">this is origin page</div>
+    <!-- <iframe id="iframe" src="http://localhost:3002/ifream.html"></iframe> -->
+</body>
+<script>
+    let data
+    let xhr = new XMLHttpRequest()
+    xhr.open("GET","http://localhost:3003/api/cors")
+    xhr.send()
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState !== 4) return 
+        if(xhr.status = 200){
+            data = xhr.response
+            //console.log(xhr.response)
+        } else {
+            console.error(xhr.response)
+        }
+    }
+</script>
+<!-- <script>
+    let iframe = document.getElementById('iframe')
+    iframe.onload = function(){
+        iframe.contentWindow.postMessage(JSON.stringify(data),'http://localhost:3002/ifream.html')
+    }
+    window.addEventListener('message',function(e){
+        console.log('getData from child page', e.data)
+    },false)
+</script> -->
+</html>

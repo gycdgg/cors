@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="background-color: red">this is ifream cross site demo</div>
+    <script>
+        window.addEventListener('message', function(e){
+            console.log('get Data from parent page', e.data)
+            let data = "this is data from child page"
+            if(e.data){
+                window.parent.postMessage(JSON.stringify(data),"http://localhost:3003/index.html")
+            }
+        })
+    </script>
+</body>
+
+</html>
