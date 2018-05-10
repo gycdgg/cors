@@ -23,5 +23,19 @@
             console.error(xhr.response)
         }
     }
+
+    let _xhr = new XMLHttpRequest()
+    _xhr.open("GET","http://localhost:3003/api/cache")
+    _xhr.send()
+    _xhr.onreadystatechange = function(){
+        if(_xhr.readyState !== 4) return 
+        if(_xhr.status = 200){
+            data = _xhr.response
+            console.log(data)
+            //window.parent.postMessage(JSON.stringify(data),"http://localhost:3002/iframe.html")
+        } else {
+            console.error(_xhr.response)
+        }
+    }
 </script>
 </html>

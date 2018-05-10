@@ -14,4 +14,20 @@ router.get('/jsonp', async function (ctx, next) {
     ctx.body = `${callback}(${JSON.stringify(resStr)})`
 })
 
+router.get('/cache', async function(ctx, next){
+    let date = new Date()
+    console.log(ctx.request.header["if-none-match"])
+    if(ctx.request.header["if-none-match"] === "1234"){
+        ctx.status = 304
+    }else{
+        ctx.set({
+            "cache-control":" max-age= 20,public",
+            'Etag': '1234'
+        })
+        //ctx.set('Last-Modified', date);
+        ctx.lastModified = date
+        ctx.body = "this is a cache data"
+    }
+})
+
 export default router

@@ -52,7 +52,9 @@ index.html      // 后端页面，直接调用接口没有跨域限制。相同�
 package.json    // 依赖
 nginx.conf      // nginx配置信息
 ```
-
+### 补充一个cache的demo
+接口为http://localhost:3003/api/cache
+koa设置cache-control的max-age，以及Etag等
 ## 总结
 跨域的方法还是蛮多的，但是现在用的比较多的应该是Nginx和设置cors的方法，webpack也有相关的插件和解决方案。
 虽然postMessage和Jsonp确实能解决某些场景下的问题，但是个人觉得这是规避问题，不是解决问题的优先解。
