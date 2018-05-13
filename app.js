@@ -25,6 +25,6 @@ app.use(async(ctx,next)=>{
 })
 router.use('/api', routes.routes())
 app.use(router.routes())
-app.listen(3003,()=>{
-    console.log('backend server listening on port http://localhost:3003')
+app.listen(80,()=>{
+    console.log('backend server listening on port http://localhost:80')
 })
